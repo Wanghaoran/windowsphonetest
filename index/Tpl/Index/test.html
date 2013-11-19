@@ -10,6 +10,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
+    <script>
+        var checksubmit = function(){
+            var val = $('input:radio[name="test"]:checked').val();
+            if(val){
+                return true;
+            }else{
+                alert('请选择答案!');
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="container">
@@ -21,7 +32,7 @@
     <div id="content">
         <div class="con_title">测测你的Windows Phone达人指数</div>
         <div class="clear20"></div>
-        <form action="__ACTION__" method="post">
+        <form action="__ACTION__" method="post" onsubmit="return checksubmit();">
             <div class="con_test"><-{$step_id}->.<-{$question.title}-></div>
             <div class="con_choice">
                 <volist name="question.options" id="qo">
@@ -29,7 +40,11 @@
                 </volist>
             </div>
             <div class="clear20"></div>
-            <div class="con_btn2"><input type="submit" value="下一题" class="btn_submit"></div>
+            <empty name="question.next">
+                <div class="con_btn2"><input type="submit" value="下一题" class="btn_submit"></div>
+            <else/>
+                <div class="con_btn2"><input type="submit" value="<-{$question.next}->" class="btn_submit"></div>
+            </empty>
             <input type="hidden" name="step" value="<-{$step_id}->" />
     </form>
         <div class="clear20"></div>
