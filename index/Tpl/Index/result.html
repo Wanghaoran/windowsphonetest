@@ -10,6 +10,20 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
+    <script>
+        function WeiXinShareBtn() {
+            if (typeof WeixinJSBridge == "undefined") {
+                alert(" 请先通过微信搜索 wow36kr 添加36氪为好友，通过微信分享文章 :) ");
+            } else {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "title": "36氪",
+                    "link": "http://www.36kr.com",
+                    "desc": " 关注互联网创业 ",
+                    "img_url": "http://www.36kr.com/assets/images/apple-touch-icon.png"
+                });
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="container">
@@ -29,7 +43,7 @@
                 <span>活动特别奖章</span>
             </div>
         </div>
-        <div class="con_jzbtn"><a href="#">分享到朋友圈</a></div>
+        <div class="con_jzbtn"><a href="javascript:WeiXinShareBtn();">分享到朋友圈</a></div>
         <div class="clear20"></div>
     </div>
 </div>
