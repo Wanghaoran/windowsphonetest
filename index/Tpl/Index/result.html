@@ -10,96 +10,74 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
-    <script>
-        var imgUrl = 'http://qqfood.tc.qq.com/meishio/16/4585bf7c-be04-420f-ac8a-2dba61a7561f/0';
-        var lineLink = 'http://life.qq.com/weixin/r/lottery/13826036970196242008#wechat_redirect';
-        var descContent = "万达狂欢节, 夺宝幸运星大抽奖活动开始啦！";
-        var shareTitle = '万达狂欢节';
-        var appid = 'wxc9937e3a66af6dc8';
-
-        function shareFriend() {
-            WeixinJSBridge.invoke('sendAppMessage',{
-                "appid": appid,
-                "img_url": imgUrl,
-                "img_width": "640",
-                "img_height": "640",
-                "link": lineLink,
-                "desc": descContent,
-                "title": shareTitle
-            }, function(res) {
-                _report('send_msg', res.err_msg);
-            })
-        }
-        function shareTimeline() {
-            WeixinJSBridge.invoke('shareTimeline',{
-                "img_url": imgUrl,
-                "img_width": "640",
-                "img_height": "640",
-                "link": lineLink,
-                "desc": descContent,
-                "title": shareTitle
-            }, function(res) {
-                _report('timeline', res.err_msg);
-            });
-        }
-        function shareWeibo() {
-            WeixinJSBridge.invoke('shareWeibo',{
-                "content": descContent,
-                "url": lineLink,
-            }, function(res) {
-                _report('weibo', res.err_msg);
-            });
-        }
-        // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-
-            // 发送给好友
-            WeixinJSBridge.on('menu:share:appmessage', function(argv){
-                shareFriend();
-            });
-
-            // 分享到朋友圈
-            WeixinJSBridge.on('menu:share:timeline', function(argv){
-                shareTimeline();
-            });
-
-            // 分享到微博
-            WeixinJSBridge.on('menu:share:weibo', function(argv){
-                shareWeibo();
-            });
-        }, false);
-
-        var testaa = function(){
-            alert("This is a Test");
-        }
-    </script>
+<style type="text/css" media="screen"> 
+body { margin:0; padding:0; height:100%;} 
+</style>
 </head>
 <body>
-<div id="container">
-    <div class="header">
+<div id="popDiv" class="mydiv" style="display:none;">  
+    <img src="__PUBLIC__/index/images/row.png" width="306" height="179" border="0"/>
+    <div>  
+    <a href="javascript:closeBg()" class="btn_del">  
+       取消
+     </a>  
+    </div>  
+</div>                                   
+<div id="hidebg" class="hidebg" style="display:none"></div>  
+<center>
+<div class="header">
     	 <div class="bar"></div>
          <div class="logo"><a href="#"><img src="__PUBLIC__/index/images/wplogo.png" width="175" height="25" border="0"></a></div>
     </div>
-    <div class="clear"></div>
-    <div id="content">
-        <div class="con_title">测测你的Windows Phone达人指数</div>
-        <div class="clear20"></div>
-        <div class="con_jzbox">
-        	<div class="con_jzleft"><img src="__PUBLIC__/index/images/jiangzhang1.jpg" width="115" height="115" border="0"/></div>
-            <div class="con_jzright">WP指数<div>98</div></div>
-            <div class="con_jzbot">
-            	恭喜您获得<br/>
-                <span>活动特别奖章</span>
-            </div>
-        </div>
-        <div class="con_jzbtn"><a href="javascript:testaa();">分享到朋友圈</a></div>
-        <div class="clear20"></div>
+<div class="clear"></div>
+<div class="xzhead">
+	属于我的WP勋章
+</div>
+<div class="xzcon">
+	<div class="xztitle">您的WP指数为</div>
+	<img src="__PUBLIC__/index/images/huan.jpg" width="243" height="237" border="0"/>
+</div>
+<div class="xzbot">
+	<div class="xzb1">
+    	<li class="dui">正确答案<div class="num">7</div></li>  
+        <li class="cuo">错误答案<div class="num">3</div></li>
+        <li class="index">您的排名<div class="num">22</div></li>  
+    </div>
+    <div class="xzb2">
+    	<li class="save cur"><a href="#"><img src="__PUBLIC__/index/images/icon_save.png" width="31" height="21" border="0"/><div>保存此勋章</div></a></li>
+        <li class="share"><a href="#" onclick="showBg();"><img src="__PUBLIC__/index/images/icon_share.png" width="20" height="23" border="0"/><div>分享到朋友圈</div></a></li>
+        <li class="repeat"><a href="__ROOT__"><img src="__PUBLIC__/index/images/icon_repeat.png" width="27" height="23" border="0"/><div>再次测试</div></a></li>
     </div>
 </div>
+</center>
 <script src="__PUBLIC__/index/js/jquery-1.9.1.min.js"></script>
-<script src="__PUBLIC__/index/js/common.js"></script>
-<script>
-setGradient('container','#ffffff','#cdcdcd',0);
+<script type="text/javascript">
+    //显示灰色 jQuery 遮罩层
+    function showBg() {
+        
+        $("#hidebg").css({
+            display: "block"
+        });
+        $("#popDiv").show();
+    }
+    //关闭灰色 jQuery 遮罩
+    function closeBg() {
+        $("#hidebg,#popDiv").hide();
+    }
 </script>
+<!--[if lte IE 6]>
+<script type="text/javascript">
+    // 浮动对话框
+    $(document).ready(function() {
+        var domThis = $('#popDiv')[0];
+        var wh = $(window).height() / 2;
+        $("body").css({
+            "background-attachment": "fixed",
+            "background-image": "url(about:blank)"
+        });
+        domThis.style.setExpression('top', 'eval((document.documentElement).scrollTop + ' + wh + ') + "px"');
+    });
+</script>
+<![endif]-->
 </body>
 </html>
