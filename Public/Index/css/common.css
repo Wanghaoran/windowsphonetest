@@ -85,9 +85,9 @@ label.disabled{}
 
 /*я╚уб*/
 .xzhead{ width:100%; height:50px; line-height:50px; background:#b1a599; color:#fff; text-align:center; font-size:18px;}
-.xzcon{ width:243px; height:237px; margin:30px auto 30px;}
+.xzcon{ width:243px; height:287px; margin:30px auto 30px;}
 .xztitle{ width:243px; height:50px; line-height:50px; text-align:center; color:#8e8071; font-size:24px;}
-.xzbot{ width:100%; height:166px; position:absolute; bottom:0px;}
+.xzbot{ width:100%; height:166px;}
 .xzb1{ width:100%; height:88px; position:relative;}
 .xzb1 li{ background:#f6f0ec; color:#b7b2ad; line-height:40px; font-size:16px;height:83px;}
 .xzb1 li div{ color:#8e8071; font-size:22px; line-height:30px;}
@@ -101,7 +101,7 @@ label.disabled{}
 .xzb2 li a img{ margin-top:15px; vertical-align:middle;}
 .xzb2 li a:hover{background:#64584c;}
 .xzb2 li.cur{ background:#64584c;}
-.xzb2 li a div{ color:#ffff; font-size:18px; line-height:30px;}
+.xzb2 li a div{ color:#ffff; font-size:16px; line-height:30px;}
 .xzb2 li.save{ position:absolute; left:0; top:0; padding:0; width:33%; border-right:1px solid #776b5e;}
 .xzb2 li.share{ margin-left:33%; margin-right:33%;}
 .xzb2 li.repeat{ position:absolute; right:0; top:0; padding:0; width:33%; border-left:1px solid #776b5e;}
