@@ -20,7 +20,11 @@ class IndexAction extends Action {
     }
 
     public function result(){
-//        dump($_SESSION);
-        $this -> display();
+        if(!empty($_SERVER['HTTP_REFERER'])){
+            $this -> display('result2');
+        }else{
+            $this -> display('result3');
+        }
+
     }
 }
