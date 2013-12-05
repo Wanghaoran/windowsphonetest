@@ -1,22 +1,57 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>参与Windows Phone达人等级测试赢好礼！</title>
-    <meta http-equiv="Cache-Control" content="max-age=3600">
-    <meta name="MobileOptimized" content="240">
-    <meta name="apple-touch-fullscreen" content="YES">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>参与Windows Phone达人等级测试赢好礼！</title>
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<meta name="MobileOptimized" content="240">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
 </head>
 <body>
-<img src="__PUBLIC__/index/images/resultbg.png">
-<br/>
-<img src="__UPLOAD__/1.png">
-<br/>
-<a href="#">分享赢奖</a>
-&nbsp;&nbsp;
-<a href="__ROOT__">再测一次</a>
-&nbsp;&nbsp;
-<a href="#">加入我们</a>
+<div id="container">
+    <div class="logo"><a href="#"><img src="__PUBLIC__/index/images/logo.png" width="138" height="20" border="0"/></a></div>
+    <div class="top_title">达人等级测试</div>
+    <div class="clear5"></div>
+    <div class="certificate">
+    	<div class="certcon">
+        	<div class="certlogo"><img src="__PUBLIC__/index/images/certlogo.png" /></div>
+            <ul class="certimg">
+                <volist name="question" id="q" mod="3">
+                    <eq name="mod" value="2">
+                        <li class="lithree">
+                            <else/>
+                        <li>
+                    </eq>
+                    <a href="#"><img src="__PUBLIC__/index/icons/<-{$q.group}->-<-{$q.question}->-<-{$q.select}->.png" /></a></li>
+                </volist>
+            </ul>
+            <div class="clear6"></div>
+            <ul class="certindex">
+            	<li>
+                	<img src="__PUBLIC__/index/images/<-{$level.icon}->"/>
+                    <div><-{$level.title}-></div>
+                </li>
+                <li>
+                	<div class="next"><-{$level.content}-></div>
+                </li>
+            </ul>
+            <div class="certfoot"><img src="__PUBLIC__/index/images/certfoot.png" /></div>
+        </div>
+    </div>
+    <div class="clear10"></div>
+    <ul class="sharebtn">
+        	<li class="libtn1">
+            	<a href="#">
+                参与Windows Phone达人测试，与你的好友PK达人等级，就有机会赢取大奖哦！
+            	</a>
+            </li>
+            <li class="libtn2"><a href="__ROOT__">我要测试</a></li>
+    </ul>
+    <div class="clear6"></div>
+</div>
 </body>
 </html>

@@ -1,10 +1,81 @@
-答题记录：
-        <volist name="Think.session.question.old" id="o">
-            <img width="96" height="96" src="__PUBLIC__/index/icons/<-{$o.group}->-<-{$o.question}->-<-{$o.select}->.png" />
-            </volist>
-        <br/>
-        答对的题目数：
-        <-{$Think.session.score}->
-        <br/>
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>参与Windows Phone达人等级测试赢好礼！</title>
+    <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta name="MobileOptimized" content="240">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
+    <style type="text/css" media="screen">
+        body { margin:0; padding:0; height:100%;}
+    </style>
+</head>
+<body>
+<!--遮罩层  start-->
+<div id="popDiv" class="mydiv" style="display:none;">
+    <img src="__PUBLIC__/index/images/row.png" width="306" height="179" border="0"/>
+    <div>
+        <a href="javascript:closeBg()" class="btn_del">
+            取消
+        </a>
+    </div>
+</div>
+<div id="hidebg" class="hidebg" style="display:none"></div>
+<!--遮罩层  end-->
+<div id="container">
+    <div class="clear5"></div>
+    <div class="certificate">
+        <div class="certcon">
+            <div class="certlogo"><img src="__PUBLIC__/index/images/certlogo.png" /></div>
+            <ul class="certimg">
+                <volist name="question" id="q" mod="3">
+                <eq name="mod" value="2">
+                <li class="lithree">
+                <else/>
+                <li>
+                </eq>
+                    <a href="#"><img src="__PUBLIC__/index/icons/<-{$q.group}->-<-{$q.question}->-<-{$q.select}->.png" /></a></li>
+                </volist>
+            </ul>
+            <div class="clear6"></div>
+            <ul class="certindex">
+                <li>
+                    <img src="__PUBLIC__/index/images/<-{$level.icon}->"/>
+                    <div><-{$level.title}-></div>
+                </li>
+                <li>
+                    <div class="next"><-{$level.content}-></div>
+                </li>
+            </ul>
+            <div class="certfoot"><img src="__PUBLIC__/index/images/certfoot.png" /></div>
+        </div>
+    </div>
+    <div class="clear20"></div>
+    <ul class="threebtn">
+        <li><a href="#" onclick="showBg();">分享赢奖</a></li>
+        <li><a href="__ROOT__">再测一次</a></li>
+        <li class="libtn3"><a href="#">加入<br/>微软达人汇</a></li>
+    </ul>
+    <div class="clear5"></div>
+</div>
+<script src="__PUBLIC__/index/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    //显示灰色 jQuery 遮罩层
+    function showBg() {
 
-        <a href="__ROOT__">再次答题</a>
+        $("#hidebg").css({
+            display: "block"
+        });
+        $("#popDiv").show();
+    }
+    //关闭灰色 jQuery 遮罩
+    function closeBg() {
+        $("#hidebg,#popDiv").hide();
+    }
+</script>
+</body>
+</html>

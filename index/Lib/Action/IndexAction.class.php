@@ -8,12 +8,14 @@ class IndexAction extends Action {
 
     public function test(){
         if(!empty($_GET['gid'])){
-            $_SESSION['question']['old'][] = array('group' => $_GET['gid'], 'question' => $_GET['qid'], 'select' => $_GET['select']);
-            //分数记录
+            //记录正确题目数量
             $q = R('Questions/check', array($_GET['gid'], $_GET['qid']), 'Widget');
             if($_GET['select'] == $q){
                 $_SESSION['score'] ++;
             }
+            //记录题目
+            $_SESSION['question']['old'][] = array('group' => $_GET['gid'], 'question' => $_GET['qid'], 'select' => $q);
+
         }
 
         //选分组
@@ -39,7 +41,13 @@ class IndexAction extends Action {
         }elseif($part3 < 2){
             $group = 3;
         }else{
-            redirect(__ROOT__ . '/index/result');
+            //记录成绩
+            $model_question = M('Question');
+            $add_arr = array();
+            $add_arr['question'] = json_encode($_SESSION['question']['old']);
+            $add_arr['score'] = $_SESSION['score'];
+            $returnId = $model_question -> add($add_arr);
+            redirect(__ROOT__ . '/index/result/id/' . $returnId);
         }
 
         //选题
@@ -54,6 +62,9 @@ class IndexAction extends Action {
             $question = rand(1,5);
         }while(in_array($question, $old_answer));
 
+        //题目序号
+        $this -> assign('number', count($_SESSION['question']['old'])+1);
+
 
         $q = R('Questions/title', array($group), 'Widget');
         $this -> assign('group', $group);
@@ -64,7 +75,23 @@ class IndexAction extends Action {
     }
 
     public function result(){
-        $this -> display();
+        $_SESSION['question'] = null;
+        $_SESSION['score'] = 0;
+
+        $model = M('Question');
+        $result = $model -> field('question,score') -> find($this -> _get('id', 'intval'));
+
+        $level = R('Level/level', array($result['score']), 'Widget');
+        $this -> assign('level', $level);
+
+        $question = json_decode($result['question'], true);
+        $this -> assign('question', $question);
+
+        if(!empty($_SERVER['HTTP_REFERER'])){
+            $this -> display('result');
+        }else{
+            $this -> display('result2');
+        }
 
     }
 }
