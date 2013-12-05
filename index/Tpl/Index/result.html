@@ -1,83 +1,10 @@
-<!DOCTYPE html>
-<html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>获奖</title>
-<meta http-equiv="Cache-Control" content="max-age=3600">
-<meta name="MobileOptimized" content="240">
-<meta name="apple-touch-fullscreen" content="YES">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
-<meta name="keywords" content="">
-<meta name="description" content="">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
-<style type="text/css" media="screen"> 
-body { margin:0; padding:0; height:100%;} 
-</style>
-</head>
-<body>
-<div id="popDiv" class="mydiv" style="display:none;">  
-    <img src="__PUBLIC__/index/images/row.png" width="306" height="179" border="0"/>
-    <div>  
-    <a href="javascript:closeBg()" class="btn_del">  
-       取消
-     </a>  
-    </div>  
-</div>                                   
-<div id="hidebg" class="hidebg" style="display:none"></div>  
-<center>
-<div class="header">
-    	 <div class="bar"></div>
-         <div class="logo"><a href="#"><img src="__PUBLIC__/index/images/wplogo.png" width="175" height="25" border="0"></a></div>
-    </div>
-<div class="clear"></div>
-<div class="xzhead">
-	属于我的WP勋章
-</div>
-<div class="xzcon">
-	<div class="xztitle">您的WP指数为</div>
-	<img src="__PUBLIC__/index/images/huan.jpg" width="243" height="237" border="0"/>
-</div>
-<div class="xzbot">
-	<div class="xzb1">
-    	<li class="dui">正确答案<div class="num">7</div></li>  
-        <li class="cuo">错误答案<div class="num">3</div></li>
-        <li class="index">您的排名<div class="num">22</div></li>  
-    </div>
-    <div class="xzb2">
-    	<li class="save cur"><a href="#"><img src="__PUBLIC__/index/images/icon_save.png" width="31" height="21" border="0"/><div>保存此勋章</div></a></li>
-        <li class="share"><a href="#" onclick="showBg();"><img src="__PUBLIC__/index/images/icon_share.png" width="20" height="23" border="0"/><div>分享到朋友圈</div></a></li>
-        <li class="repeat"><a href="__ROOT__"><img src="__PUBLIC__/index/images/icon_repeat.png" width="27" height="23" border="0"/><div>再次测试</div></a></li>
-    </div>
-</div>
-</center>
-<script src="__PUBLIC__/index/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-    //显示灰色 jQuery 遮罩层
-    function showBg() {
-        
-        $("#hidebg").css({
-            display: "block"
-        });
-        $("#popDiv").show();
-    }
-    //关闭灰色 jQuery 遮罩
-    function closeBg() {
-        $("#hidebg,#popDiv").hide();
-    }
-</script>
-<!--[if lte IE 6]>
-<script type="text/javascript">
-    // 浮动对话框
-    $(document).ready(function() {
-        var domThis = $('#popDiv')[0];
-        var wh = $(window).height() / 2;
-        $("body").css({
-            "background-attachment": "fixed",
-            "background-image": "url(about:blank)"
-        });
-        domThis.style.setExpression('top', 'eval((document.documentElement).scrollTop + ' + wh + ') + "px"');
-    });
-</script>
-<![endif]-->
-</body>
-</html>
+答题记录：
+        <volist name="Think.session.question.old" id="o">
+            <img width="96" height="96" src="__PUBLIC__/index/icons/<-{$o.group}->-<-{$o.question}->-<-{$o.select}->.png" />
+            </volist>
+        <br/>
+        答对的题目数：
+        <-{$Think.session.score}->
+        <br/>
+
+        <a href="__ROOT__">再次答题</a>

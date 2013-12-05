@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>测试</title>
+<title>Windows Phone 达人等级测试</title>
 <meta http-equiv="Cache-Control" content="max-age=3600">
 <meta name="MobileOptimized" content="240">
 <meta name="apple-touch-fullscreen" content="YES">
@@ -10,50 +10,32 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/index/css/common.css">
-    <script>
-        var checksubmit = function(){
-            var val = $('input:radio[name="test"]:checked').val();
-            if(val){
-                return true;
-            }else{
-                alert('请选择答案!');
-                return false;
-            }
-        }
-    </script>
 </head>
 <body>
 <div id="container">
-    <div class="header">
-    	 <div class="bar"></div>
-         <div class="logo"><a href="#"><img src="__PUBLIC__/index/images/wplogo.png" width="175" height="25" border="0"></a></div>
-    </div>
-    <div class="clear"></div>
-    <div id="content">
-        <div class="con_title">测测你的Windows Phone达人指数</div>
-        <div class="clear20"></div>
-        <form action="__ACTION__" method="post" onsubmit="return checksubmit();">
-            <div class="con_test"><-{$step_id}->.<-{$question.title}-></div>
-            <div class="con_choice">
-                <volist name="question.options" id="qo">
-                    <label for="r<-{$key}->"><input type="radio" name="test" id="r<-{$key}->" value="<-{$key}->"/>&nbsp;<-{$qo}-></label><br/>
-                </volist>
-            </div>
-            <div class="clear20"></div>
-            <empty name="question.next">
-                <div class="con_btn2"><input type="submit" value="下一题" class="btn_submit"></div>
-            <else/>
-                <div class="con_btn2"><input type="submit" value="<-{$question.next}->" class="btn_submit"></div>
-            </empty>
-            <input type="hidden" name="step" value="<-{$step_id}->" />
-    </form>
-        <div class="clear20"></div>
+    <div class="logo"><a href="#"><img src="__PUBLIC__/index/images/logo.png" width="138" height="20" border="0"/></a></div>
+    <div class="top_title">达人等级测试</div>
+    <div class="clear40"></div>
+    <div class="jpbox">
+        <ul class="<-{$q.color_q}->">
+        	<li class="litest1">
+            	<div class="num">3</div>
+            </li>
+            <li class="litest2"><p><-{$a.q}-></p></li>
+        </ul>
+        <div class="clear40"></div>
+        <volist name="a.a" id="a">
+        <ul class="<-{$q.color_a}->">
+        	<li class="lian1">
+            	<a href="__ACTION__/gid/<-{$group}->/qid/<-{$question}->/select/<-{$key}->"><span><-{$key}->.</span><-{$a}-> </a>
+            </li>
+            <li class="lian2"><a href="__ACTION__/gid/<-{$group}->/qid/<-{$question}->/select/<-{$key}->"><img src="__PUBLIC__/index/icons/<-{$group}->-<-{$question}->-<-{$key}->.png"/></a></li>
+        </ul>
+        <div class="clear6"></div>
+        </volist>
+
+        <div class="clear40"></div>
     </div>
 </div>
-<script src="__PUBLIC__/index/js/jquery-1.9.1.min.js"></script>
-<script src="__PUBLIC__/index/js/common.js"></script>
-<script>
-setGradient('container','#ffffff','#cdcdcd',0);
-</script>
 </body>
 </html>
