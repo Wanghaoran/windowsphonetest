@@ -13,11 +13,11 @@ legend{color:#000;}
 fieldset,img{border:0;}
 button,input,select,textarea{font-size:100%;}
 table{border-collapse:collapse;border-spacing:0;}
-input{outline: none;}/* ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+input{outline: none;}/* ÆÁ±ÎÎÄ±¾¿ò¸ßÁÁ */
 textarea {outline: none;} 
 a{text-decoration:none;color:#333;outline:none;}
 a:hover{text-decoration:none;color:#F40;outline:none;}
-/* ï¿½ï¿½ï¿½?ï¿½ï¿½ */
+/* ÇåÀí¸¡¶¯ */
 .clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 .clear {zoom:1; /* for IE6 IE7 */}
 .clear5{ clear:both; height:5px;}
@@ -28,9 +28,10 @@ a:hover{text-decoration:none;color:#F40;outline:none;}
 .clear40{ clear:both; height:40px;}
 
 body{ background:#000;}
+html{-webkit-text-size-adjust:none;}/*chrome font-size<12px */ 
 #container{ margin:5px auto; background:#282828; width:310px;}
 
-/* ï¿½ï¿½Ò³Í·ï¿½ï¿½ */
+/* Ê×Ò³Í·²¿ */
 #container .logo{ height:20px; padding:10px;}
 #container .top_title{ height:60px; line-height:60px; font-size:32px; text-align:left; text-align:left; padding:0 0 0 10px; color:#fff;}
 #container .jpbox{ width:300px; margin:0px auto;}
@@ -42,12 +43,12 @@ body{ background:#000;}
 #container ul.jplist li.li3 img{ border:none;}
 
 #container ul.jptext{ padding:6px 0 0 2px;}
-#container ul.jptext li{ float:left; height:146px;background:#e3c800; color:#fff;}
-#container ul.jptext li h2{ font-size:14px; padding:0 5px; height:30px; line-height:30px;}
-#container ul.jptext li p{ font-size:8px; line-height:18px; padding:0 5px;}
+#container ul.jptext li{ float:left; height:96px;background:#e3c800; color:#fff;}
+#container ul.jptext li h2{ font-size:12px; padding:0 5px; height:30px; line-height:30px;}
+#container ul.jptext li p{ font-size:9px; line-height:18px; padding:0 0 0 5px;}
 #container ul.jptext li.litext1{ width:196px; margin:0 6px 0 0;}
 #container ul.jptext li.litext2{ width:96px;}
-#container ul.jptext li.litext2 p{ line-height:25px;}
+#container ul.jptext li.litext2 p{ line-height:18px;}
 
 #container ul.jpbtn{ padding:6px 0 0 2px;}
 #container ul.jpbtn li{ float:left; height:96px; color:#fff;}
@@ -57,7 +58,7 @@ body{ background:#000;}
 #container ul.jpbtn li.libtn2{ width:196px; background:#fa6900; text-align:center;}
 #container ul.jpbtn li.libtn2 a{ display:inline-block; width:196px; height:96px;line-height:96px; font-size:22px; font-weight:400; color:#fff;}
 
-/* ï¿½ï¿½ï¿½ï¿½Ò³ */
+/* ²âÊÔÒ³ */
 #container ul.test1{ padding:6px 0 0 2px;}
 #container ul.test1 li{ float:left; height:96px;background:#60aa17; color:#fff;}
 #container ul.test1 li.litest1{ width:96px; margin:0 6px 0 0;}
@@ -137,9 +138,9 @@ border-radius: 6px;behavior:url(css/PIE.htc);}
 #container ul.sharebtn li.libtn2{ width:112px; background:#e3c800 url(../images/icon_row.png) center no-repeat;; text-align:center;}
 #container ul.sharebtn li.libtn2 a{ display:inline-block; width:100px; padding-right:12px; height:96px;line-height:96px; font-size:18px; font-weight:800; color:#e3c800;}
 
-/*ï¿½ï¿½ï¿½Ö²ï¿½*/
+/*ÕÚÕÖ²ã*/
 .mydiv {  background:none;  text-align: center;   font-size: 12px;    z-index:99;  left:50%;/*FF IE7*/    
-    top: 20px;/*FF IE7*/     margin-left:-150px!important;/*FF IE7 ï¿½ï¿½ÖµÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ */ position:absolute;/*FF IE7*/    
+    top: 20px;/*FF IE7*/     margin-left:-150px!important;/*FF IE7 ¸ÃÖµÎª±¾Éí¿íµÄÒ»°ë */ position:absolute;/*FF IE7*/    
 }  
 .hidebg { width:100%; height:100%; background: #000;   filter:alpha(opacity=50);/*IE*/    opacity:0.5;/*FF*/    z-index:1;  position:absolute;/*IE6*/ position:fixed; left:0; top:0; }  
 a.btn_del{ width:300px; height:40px; line-height:40px; text-align:center; font-size:16px; color:#fff; text-decoration:none; background:#7b7538; display:inline-block; margin-top:20px;}
