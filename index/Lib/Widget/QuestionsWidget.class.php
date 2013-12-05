@@ -7,7 +7,7 @@ class QuestionsWidget extends Action {
             'color_a' => 'answer3',
             'question' => array(
                 1 => array(
-                    'q' => '大，不是体积的放大，而是体验的的飞升。知道Windows Phone Lumia 1520开始屏幕可以支持多少列中号的动态磁贴么？',
+                    'q' => '知道Windows Phone Lumia 1520开始屏幕可以支持多少列中号的动态磁贴么？',
                     'a' => array(
                         'A' => '2列',
                         'B' => '3列',
